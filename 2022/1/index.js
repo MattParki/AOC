@@ -1,10 +1,33 @@
-import { getInput } from "../../utils/aoc.js"
+import { getInput } from "../../utils/aoc.js";
+import { EOL } from "os";
 
-const rows = (await getInput());
+const items = (await getInput()).split(EOL);
 
-part1(rows);
-part2(rows);
+const totalCaloriesPerElf = [];
+let index = 0;
 
-function part1(rows) {}
+items.forEach((item) => {
+  if (item === "") {
+    index++;
+    totalCaloriesPerElf[index] = 0;
+  } else {
+    totalCaloriesPerElf[index] += ~~item;
+  }
+});
 
-function part2(rows) {}
+totalCaloriesPerElf.sort((a, b) => a - b);
+
+part1(totalCaloriesPerElf);
+part2(totalCaloriesPerElf);
+
+function part1(totalCaloriesPerElf) {
+  const max = totalCaloriesPerElf[totalCaloriesPerElf.length - 1];
+
+  console.log(`Part 1: ${max}`);
+}
+
+function part2(totalCaloriesPerElf) {
+  const total = totalCaloriesPerElf.slice(-3).reduce((acc, cur) => acc + cur);
+
+  console.log(`Part 2: ${total}`);
+}

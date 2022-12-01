@@ -11,8 +11,8 @@ const { answer, ...opts } = minimist(process.argv.slice(2), {
     answer: ["ans", "a"],
   },
   default: {
-    year: now.getFullYear(),
-    day: now.getDay(),
+    year: now.getFullYear().toString(),
+    day: now.getDate().toString(),
     level: 1,
   },
   string: ["year", "day"],

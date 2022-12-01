@@ -12,8 +12,8 @@ const { day, year, sample } = minimist(process.argv.slice(2), {
     sample: "s",
   },
   default: {
-    year: now.getFullYear(),
-    day: now.getDay(),
+    year: now.getFullYear().toString(),
+    day: now.getDate().toString(),
     sample: false,
   },
   string: ["year", "day"],

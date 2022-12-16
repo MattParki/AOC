@@ -20,7 +20,7 @@ const { day, year, sample } = minimist(process.argv.slice(2), {
   boolean: "sample",
 });
 
-const filePath = path.join(process.env.PWD, year, day, "index.js");
+const filePath = path.join(process.cwd(), year, day, "index.js");
 
 try {
   await readFile(filePath);

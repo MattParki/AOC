@@ -8,7 +8,7 @@ import { EOL } from "os";
 const url = "https://adventofcode.com";
 const now = new Date();
 const inputFilePath = ({ year, day, sample }) =>
-  path.join(process.env.PWD, year, day, sample ? "sample.txt" : "input.txt");
+  path.join(process.cwd(), year, day, sample ? "sample.txt" : "input.txt");
 
 const defaultOpts = {
   day: now.getDay(),

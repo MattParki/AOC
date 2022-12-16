@@ -22,7 +22,7 @@ const { day, year, open } = minimist(process.argv.slice(2), {
   boolean: "open",
 });
 
-const dirPath = path.join(process.env.PWD, year, day);
+const dirPath = path.join(process.cwd(), year, day);
 
 try {
   console.log("Creating Folder...");

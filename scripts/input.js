@@ -17,7 +17,7 @@ const { day, year } = minimist(process.argv.slice(2), {
   string: ["year", "day"],
 });
 
-const dirPath = path.join(process.env.PWD, year, day);
+const dirPath = path.join(process.cwd(), year, day);
 
 try {
   console.log("Creating Folder...");
